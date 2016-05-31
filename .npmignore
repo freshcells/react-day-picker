@@ -11,6 +11,5 @@ bower.json
 coverage
 docs
 examples
-src
 test
 webpack.config.js
