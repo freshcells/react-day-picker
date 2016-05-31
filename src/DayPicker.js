@@ -42,6 +42,7 @@ export default class DayPicker extends Component {
     onCaptionClick: PropTypes.func,
 
     renderDay: PropTypes.func,
+    renderWeekDay: PropTypes.func,
 
     captionElement: PropTypes.element,
 
@@ -60,6 +61,11 @@ export default class DayPicker extends Component {
     canChangeMonth: true,
     reverseMonths: false,
     renderDay: day => day.getDate(),
+    renderWeekDay: (i, locale, localeUtils) => (
+      <abbr title={localeUtils.formatWeekdayLong(i, locale)}>
+        {localeUtils.formatWeekdayShort(i, locale)}
+      </abbr>
+    ),
     captionElement: <Caption />,
   };
 
@@ -373,6 +379,7 @@ export default class DayPicker extends Component {
           className="DayPicker-Month"
           wrapperClassName="DayPicker-Body"
           weekClassName="DayPicker-Week"
+          renderWeekDay={this.props.renderWeekDay}
           locale={this.props.locale}
           localeUtils={this.props.localeUtils}
           key={i}

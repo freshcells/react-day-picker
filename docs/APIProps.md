@@ -97,6 +97,10 @@ See also [this advanced example](../examples/#yearNavigation), showing a year na
 
 Returns the content of a day cell. By default, it renders the day's date: `(day) ⇒ day.getDate()`
 
+#### renderWeekDay `(i:number, localeUtils:Object) ⇒ Element`
+
+Returns the content of a weekday header cell. By default, it renders localized weekday short name with long name as abbrev.
+
 ---
 
 #### onDayClick  `(e: SyntethicEvent, day: Date, modifiers: Object) ⇒ void`
